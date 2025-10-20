@@ -163,7 +163,10 @@ Desktop.ini
  
 #Ignore log directories
 log/ 
- 
+
+#These need to be above .gitkeep so we actually keep the folders 
+*/python_virtualenvs/*
+*/versions/*
  
 #So .gitignore is never removed, and so .gitkeep so we can retain folder structure. This needs to be at the bottom of the file.
 !.gitignore
@@ -172,5 +175,3 @@ log/
 #Keep Python requirements files
 !requirements.txt
 
-*/python_virtualenvs/*
-*/versions/*
