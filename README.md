@@ -1,4 +1,4 @@
-# H1 -  PyFoundry
+# PyFoundry
 Pyfoundry docker environment for building standalone Python environments for system transplantation. It is useful in the folowing scenarios:
 * Transplantation to air gapped systems with no internet connectivity.
 * Systems where you want a clean pip driven Python without system Python packages (Ubuntu?),
@@ -13,7 +13,7 @@ To actually manage the virtual environments. The docker system functions as a bu
 
 In order for the transplanted environment to function properly it is necessary to build python against the system for which it will run.
 
-# H2 - Getting started and working with the system
+# Getting started and working with the system
 * For starters you'll need to build a docker container for whatever platform you're compiling Python against. The following example assumings Ubuntu18.04:
 '''
 cd ubuntu18.04
@@ -52,7 +52,7 @@ copy both tarballs to the target system, and extract them to the same exact path
 
 
 
-# H2 - Additional notes:
+# Additional notes:
 * It is not necessary to copy the complete pyenv project folder, just the python binaries it creates (EG: versions/3.6.15), along with the virtual envornments that virtualenv creates (EG test)
 * Centos 7.x only support Python up to 3.9. To go higher, in the 3.10 range requires installing a newer version of OpenSSL, which would also have to be installed on target systems.
 * Centos 6.8 Only supports up to 3.6.15
