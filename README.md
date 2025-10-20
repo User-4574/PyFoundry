@@ -47,5 +47,5 @@ ENJOY! :)
 
 It is not necessary to copy the complete pyenv project folder, just the python binaries it creates (EG: versions/3.6.15), along with the virtual envornments that virtualenv creates (EG test)
 
-**Update:
-**Centos 7.x only support Python up to 3.9. To go higher, in the 3.10 range requires installing a newer version of OpenSSL, which would also have to be installed on target systems.
+Centos 7.x only support Python up to 3.9. To go higher, in the 3.10 range requires installing a newer version of OpenSSL, which would also have to be installed on target systems.
+Centos 6.8 Only supports up to 3.6.15
