@@ -12,8 +12,14 @@ To actually manage the virtual environments. The docker system functions as a bu
 
 In order for the transplanted environment to function properly it is necessary to build python against the system for which it will run.
 
-1)Within each directory is a 'compile' bash script, simply run this to build, start and enter the container. Note this will create and install a network in your docker environment for the containers use. Afterward you can easily enter your docker container with the enter bash script in each folder. This is just for convenience.
-2)Once inside the container a bash script (in the path, so can be ran from anywhere) called 'newenv' can be used like so:
+1)For starters you'll need to build a docker container for whatever platform you're compiling Python against. The following example assumings Ubuntu18.04:
+'''
+cd ubuntu18.04
+./compile
+'''
+That will build the container, and enter it. From there you can start generating Python environments.
+
+2)This assumes you want to build 3.6.15 in a project called test.
 '''
 newenv 3.6.15 test
 '''
@@ -32,7 +38,7 @@ Using the --only-binary=:all: forces pip to use binary packages, which prevents 
 import paramiko
 quit()
 '''
-5)Transplanting: To transplant Python to the target system it is easier to start outside of the container you will need to use tar, like so:
+5)To transplant Python to the target system it is easier to start outside of the container you will need to use tar, like so:
 '''
 cd centos6.8/python_virtualenvs
 tar cvzf test_pythonenv.tar.gz test/
@@ -48,4 +54,18 @@ ENJOY! :)
 It is not necessary to copy the complete pyenv project folder, just the python binaries it creates (EG: versions/3.6.15), along with the virtual envornments that virtualenv creates (EG test)
 
 Centos 7.x only support Python up to 3.9. To go higher, in the 3.10 range requires installing a newer version of OpenSSL, which would also have to be installed on target systems.
+
 Centos 6.8 Only supports up to 3.6.15
+
+
+The project uses git sub-modules for each environment. To update them simply go into python_virtualenv/pyenv, and run a 
+'''
+git fetch
+git pull
+'''
+
+You can see what versions of Python are available for attempted install in each container using:
+'''
+cd /python_virtualenvs/pyenv/bin/
+./pyenv install --list
+'''
