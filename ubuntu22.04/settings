@@ -1,0 +1,8 @@
+#!/bin/bash
+dockername=python_virtualenv_wheelhouse_ubuntu22.04
+#dockername=${PWD##*/}
+network_name='python_wheelhouse'
+#Parent name for package. Will show up on the image information
+package_parent='4574'
+#You can rename the above to whatever network you use in your environment. Since we aren't listening on any ports it really doesn't matter.
+

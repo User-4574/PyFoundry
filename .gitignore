@@ -1,0 +1,176 @@
+#Include .gitkeep and .gitignore files so we can retain folders
+ 
+ 
+#Ignore image files
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+*.PNG
+*.gif
+*.GIF
+*.bmp
+*.BMP
+*.tiff
+*.TIFF
+*.ico
+*.ICO
+*.svg
+*.SVG
+*.webp
+*.WEBP
+# Ignore video files
+*.mp4
+*.MP4
+*.avi
+*.AVI
+*.mkv
+*.MKV
+*.mov
+*.MOV
+*.wmv
+*.WMV
+*.flv
+*.FLV
+*.webm
+*.WEBM
+# Ignore audio files
+*.mp3
+*.MP3
+*.wav
+*.WAV
+*.ogg
+*.OGG
+*.flac
+*.FLAC
+*.aac
+*.AAC
+*.m4a
+*.M4A
+# Ignore document files
+*.pdf
+*.PDF
+*.doc
+*.DOC
+*.docx
+*.DOCX
+*.ppt
+*.PPT
+*.pptx
+*.PPTX
+*.xls
+*.XLS
+*.xlsx
+*.XLSX
+*.odt
+*.ODT
+*.ods
+*.ODS
+*.odp
+*.ODP
+*.rtf
+*.RTF
+*.txt
+*.TXT
+# Ignore archive files
+*.zip
+*.ZIP
+*.tar.gz
+*.TAR.GZ
+*.rar
+*.RAR
+*.7z
+*.7Z
+*.gz
+*.GZ
+*.bz2
+*.BZ2
+*.xz
+*.XZ
+# Ignore log files
+*.log
+*.LOG
+# Ignore SQLite database files
+*.sqlite
+*.SQLITE
+*.sqlite3
+*.SQLITE3
+*.db
+*.DB
+# Ignore temporary files
+*.tmp
+*.TMP
+*.swp
+*.SWP
+*.swo
+*.SWO
+*.bak
+*.BAK
+*.old
+*.OLD
+*.orig
+*.ORIG
+# Ignore system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# Ignore compiled code
+*.class
+*.CLASS
+*.dll
+*.DLL
+*.exe
+*.EXE
+*.o
+*.O
+*.so
+*.SO
+*.a
+*.A
+*.out
+*.OUT
+*.pyc
+*.PYC
+*.pyo
+*.PYO
+*.pyd
+*.PYD
+# Ignore node_modules (if using Node.js)
+node_modules/
+# Ignore virtual environment directories (Python)
+venv/
+.env/
+# Ignore coverage reports
+coverage/
+*.lcov
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+# Ignore macOS specific files
+*.DS_Store
+# Ignore Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+ 
+#Ignore CSV files
+*.csv
+*.CSV
+ 
+#Ignore log directories
+log/ 
+ 
+ 
+#So .gitignore is never removed, and so .gitkeep so we can retain folder structure. This needs to be at the bottom of the file.
+!.gitignore
+!.gitkeep
+ 
+#Keep Python requirements files
+!requirements.txt
+
+*/python_virtualenvs/*
+*/versions/*

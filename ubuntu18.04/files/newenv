@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "After install you can run pip and python from the python_virtualenvs directory you install by either specifying the full path, or switchig to that directory/bin and using the the ./python and ./pip commands"
+if [ -n "$2" ];then
+  version="$1"
+  dirname="$2"
+	if [ ! "$(pyenv versions|grep "$1" -wc)" -gt 0 ];then
+		echo "Version $version not found, running pyenv install $version"
+		pyenv install "$version"
+	else
+		echo "Version $version found, no need to install Python"
+	fi
+	echo "Running virtualenv --always-copy --python=/root/.pyenv/versions/$version/bin/python /python_virtualenvs/$dirname"
+	virtualenv --python="/root/.pyenv/versions/$version/bin/python" "/python_virtualenvs/$dirname"
+#	echo "Running virtualenv --relocatable /python_virtualenvs/$dirname"
+#	virtualenv --relocatable "/python_virtualenvs/$dirname"
+	echo "Now, you can tarball up /python_virtualenvs/versions/$version and /python_virtualenvs/$dirname and move them to the target system"
+	echo "Or, outside of the docker environment, simply tar up the files/ directory, and copy the pyenv to /root/.pyenv on the target system"
+	echo "And copy /files/python_virtualenvs to /python_virtualenvs on the target system"
+else
+	echo "Usage $0 pyversion env_name"
+	echo "EG: $0 3.6.15 testenv"
+fi

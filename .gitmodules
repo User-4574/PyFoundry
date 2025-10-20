@@ -1,0 +1,12 @@
+[submodule "ubuntu24.04/python_virtualenvs/pyenv"]
+	path = ubuntu24.04/python_virtualenvs/pyenv
+	url = https://github.com/pyenv/pyenv
+[submodule "ubuntu22.04/python_virtualenvs/pyenv"]
+	path = ubuntu22.04/python_virtualenvs/pyenv
+	url = https://github.com/pyenv/pyenv
+[submodule "ubuntu18.04/python_virtualenvs/pyenv"]
+	path = ubuntu18.04/python_virtualenvs/pyenv
+	url = https://github.com/pyenv/pyenv
+[submodule "centos7.9/python_virtualenvs/pyenv"]
+	path = centos7.9/python_virtualenvs/pyenv
+	url = https://github.com/pyenv/pyenv

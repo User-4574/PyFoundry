@@ -1,0 +1,23 @@
+#!/bin/bash
+. settings
+if [ $(docker network ls |grep $network_name -c) -lt 1 ];then 
+	echo "Network "$network_name" doesn't exist, creating"
+	docker network create $network_name 
+else
+	echo "Network "$network_name" already exists, not creating"
+fi
+docker stop $dockername
+docker rm $dockername
+docker build -t $package_parent/$dockername .
+docker run -d \
+        --restart unless-stopped \
+        --network $network_name \
+        --hostname $dockername \
+        --name $dockername \
+	--mount type=bind,source="$(pwd)"/python_virtualenvs,target=/python_virtualenvs/ \
+	--mount type=bind,source="$(pwd)"/files,target=/files/ \
+	--mount type=bind,source="$(pwd)"/files/bashrc,target=/root/.bashrc \
+        --mount type=bind,source="$(pwd)"/files/newenv,target=/bin/newenv \
+$package_parent/$dockername
+docker exec -it $dockername bash
+        #--mount type=bind,source="$(pwd)"/files/pyenv,target=/root/.pyenv/ \

@@ -1,0 +1,8 @@
+[centos-vault]
+name=CentOS-$releasever - Vault
+#baseurl=http://vault.centos.org/$releasever/os/$basearch/
+baseurl=http://vault.centos.org/6.8/os/x86_64/
+gpgcheck=1
+#gpgkey=http://vault.centos.org/RPM-GPG-KEY-CentOS-$(rpm -q --qf "%{VERSION}.%{RELEASE}" centos-release)
+enabled=1
+protect=1

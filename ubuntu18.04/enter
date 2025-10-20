@@ -1,0 +1,4 @@
+#!/bin/bash
+. settings
+docker exec -it $dockername bash
+

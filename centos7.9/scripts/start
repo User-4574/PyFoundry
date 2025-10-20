@@ -1,0 +1,22 @@
+#!/bin/bash
+myservices=(
+)
+
+
+trap die SIGTERM
+function die(){
+ #       for i in "${myservices[@]}";do
+ #               logger "stopping $i"
+ #               /etc/init.d/$i stop
+ #       done
+        exit 0
+}
+for i in "${myservices[@]}";do
+        logger "starting $i"
+        /etc/init.d/$i start
+done
+
+for (( ; ; ));do
+        sleep 50
+done
+
