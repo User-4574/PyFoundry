@@ -13,7 +13,12 @@ Docker serves as the **build platform**.
 # Getting started and working with the system
 ## Getting Started
 
-### 1 Build the Docker Container
+### 1 Clone the repository
+Because the repository uses sub-modules to link against the pyenv repo, you must a special switch:
+```bash
+git clone --recurse-submodules git@github.com:User-4574/PyFoundry.git
+```
+### 2 Build the Docker Container
 Build a container for the platform you’re targeting.  
 For example, to build a Python environment for **Ubuntu 18.04**:
 ```bash
@@ -22,7 +27,7 @@ cd ubuntu18.04
 ```
 That will build the container, and enter it. From there you can start generating Python environments.
 
-### 2 Create a New Environment
+### 3 Create a New Environment
 Example: build Python 3.6.15 for a project called test. While within the docker container for your chosen platform:
 ```bash
 newenv 3.6.15 test
@@ -33,7 +38,7 @@ The base Python environment → /python_virtualenvs/versions/3.6.15
 
 A project environment → /python_virtualenvs/test/
 
-### 3 Install Packages
+### 4 Install Packages
 To install the paramiko module using pip :
 ```bash
 cd /python_virtualenvs/test/bin
@@ -42,7 +47,7 @@ cd /python_virtualenvs/test/bin
 The --only-binary=:all: flag forces binary wheels, avoiding painful source builds that usually brake.
 
 
-### 4 Test the Environment
+### 5 Test the Environment
 ```bash
 cd /python_virtualenvs/test/bin
 ./python
@@ -50,7 +55,7 @@ cd /python_virtualenvs/test/bin
 >>> quit()
 ```
 
-### 5 Transplant to Target System
+### 6 Transplant to Target System
 
 Outside of the container:
 ```bash
